@@ -1,0 +1,116 @@
+<extend name="Base:base" />
+<block name="body">
+    <body>
+        <style>
+            .user_box{
+                width: 100%;
+                padding-left:10%;
+            }
+            .user_box .user_item{
+                display: inline-block;
+                width: 20%;
+                margin: 10px;
+                text-align: left;
+                overflow: hidden;
+            }
+        </style>
+        <div class="layui-fluid">
+            <div class="layui-row">
+                <form class="layui-form">
+                    
+                    <fieldset class="layui-elem-field layui-field-title" style="background-color:#fff">
+                        <legend>操作用户</legend>
+                        <div class="layui-field-box">
+                            <div class="user_box"></div>
+                        </div>
+                    </fieldset>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">角色</label>
+                        <div class="layui-input-block">
+                            <volist name="role" id="role">
+                                <input type="checkbox" value="{$role.role_id}" name="role[]" lay-skin="primary" title="{$role.role_name}" {$role.checked}> 
+                            </volist>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="L_repass" class="layui-form-label">
+                        </label>
+                        <button  class="layui-btn" lay-filter="edit" lay-submit="">
+                          保存设置
+                        </button>
+                    </div>
+              </form>
+            </div>
+        </div>
+        <script>
+        layui.use(['form', 'layer'],
+            function() {
+                $ = layui.jquery;
+                var form = layui.form,
+                layer = layui.layer;
+
+                var check_user = window.localStorage.check_user;
+                $.ajax({
+                    url: "{:U('User/getUserName')}",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {'check_user':check_user},
+                    success:function(res){
+                        $.each(res.data,function(index,val){
+                            if(val.username == ''){
+                                $('.user_box').append(`
+                                    <div class="user_item" data-userid = '${val.user_id}'>${val.user_id}</div>
+                                `);
+                            }else{
+                                $('.user_box').append(`
+                                    <div class="user_item" data-userid = '${val.user_id}'>${val.username}</div>
+                                `);
+                            }
+                        });
+                    }
+                });
+        
+                //监听提交
+                form.on('submit(edit)',
+                function(data) {
+                    // debugger;
+                    var url = "{:U('User/set_role')}";
+                    data.field.check_user = check_user;
+                    $.post(url,data.field,function(rs){
+                      if(rs.status==1){
+                          //发异步，把数据提交给php
+                          layer.alert(rs.msg, {
+                              icon: 6
+                          },
+                          function() {
+                              //关闭当前frame
+                              xadmin.close();
+                              // 可以对父窗口进行刷新 
+                              xadmin.father_reload();
+                              
+                          });
+                      }else{
+                        layer.msg(rs.msg); 
+                      }
+                    },"json");
+                    return false;
+
+                    console.log(data);
+                    //发异步，把数据提交给php
+                    layer.alert("增加成功", {
+                        icon: 6
+                    },
+                    function() {
+                        //关闭当前frame
+                        xadmin.close();
+                        // 可以对父窗口进行刷新 
+                        xadmin.father_reload();
+                    });
+                    return false;
+                });
+
+            });
+      </script>
+    </body>
+</block>

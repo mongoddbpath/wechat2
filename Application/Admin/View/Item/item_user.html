@@ -1,0 +1,62 @@
+<extend name="Base:base" />
+<block name="body">
+    <body>
+        <div class="layui-fluid">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                      
+                        <div class="layui-card-body layui-table-body layui-table-main">
+
+                          <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
+
+                         
+  
+                          <script type="text/html" id="roleTpl">
+                            {{# layui.each(d.role, function(index, item){ }}
+                              <span class="tpl_span">{{item.role_name}}</span>
+                            {{# }); }}
+                          </script>
+
+                          <script type="text/html" id="itemTpl">
+                            {{# layui.each(d.item, function(index, item){ }}
+                              <span class="tpl_span">{{item.item_name}}</span>
+                            {{# }); }}
+                          </script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </body>
+    <script>
+      layui.use(['laydate','form','table'], function(){
+        var laydate = layui.laydate,
+            table = layui.table,
+            form = layui.form;
+
+        //数据表格
+        table.render({
+            elem: '#currentTableId',
+            url: '{:U("Item/item_user")}' + '?item_id={$item_id}',
+            method: 'post',
+            cols: [[
+                {field: 'username', title: '姓名'},
+                {field: 'role', title: '角色', templet: '#roleTpl'},
+                {field: 'item', title: '工程项目', templet: '#itemTpl'}
+            ]],
+            limits: [10, 15, 20, 25, 50, 100],
+            limit: 20,
+            page: true,
+            done: function(res, curr, count){
+                //如果是异步请求数据方式，res即为你接口返回的信息。curr 当前页码 count数据总量
+                //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+                console.log(res);
+            }
+        });
+
+      });
+
+    </script>
+</block>

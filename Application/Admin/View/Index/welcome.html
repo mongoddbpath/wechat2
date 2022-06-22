@@ -1,0 +1,116 @@
+<extend name="Base:base" />
+<block name="body">
+    <body>
+		<style>
+			a{
+				cursor: pointer;
+			}
+		</style>
+		<!-- onclick="javascript:parent.xadmin.add_tab('订单列表','/index.php/Admin/Order/order_list');parent.location.href='/index.php/Admin#3';parent.location.reload();parent.$('.auth_id_3').click();" -->
+        <div class="layui-fluid">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body ">
+                            <blockquote class="layui-elem-quote">欢迎您：
+                                <span class="x-red">{$username}</span>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12" style="display:none">
+                    <div class="layui-card">
+                        <div class="layui-card-header">待办事项</div>
+                        <hr class="layui-bg-green">
+                        <div class="layui-card-body ">
+                            <ul class="layui-row layui-col-space10 layui-this x-admin-carousel x-admin-backlog">
+                                <li class="layui-col-md2 layui-col-xs6">
+                                    <a onclick="javascript:parent.xadmin.add_tab('订单列表','{:U('Order/order_list')}');parent.location.href='/index.php/Admin#3';parent.location.reload();parent.$('.auth_id_3').click();" class="x-admin-backlog-body">
+                                        <p style="text-align: center">
+                                        <cite>{$distribution_order}</cite></p>
+                                        <h3 style="text-align: center">待分配客服</h3>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12" style="display:none">
+                    <div class="layui-card">
+                        <div class="layui-card-header">项目预警</div>
+                        <hr class="layui-bg-green">
+                        <div class="layui-card-body ">
+                            <ul class="layui-row layui-col-space10 layui-this x-admin-carousel x-admin-backlog">
+                                <volist name="task_list" id="task">
+                                <li class="layui-col-md2 layui-col-xs6">
+                                    <a onclick="javascript:parent.xadmin.add_tab('我的任务','{:U('Task/task_list_my')}');parent.location.href='/index.php/Admin#5';parent.location.reload();parent.$('.auth_id_5').click();" class="x-admin-backlog-body">
+                                        <p style="width:100%;text-align:center;"><cite style="color:red">{$task.num}</cite></p>
+                                        <h3 style="color:red;text-align: center;">{$task.node_name}超期预警</h3>
+                                    </a>
+                                </li>
+                                </volist>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--div class="layui-col-sm6 layui-col-md3">
+                    <div class="layui-card">
+                        <div class="layui-card-header">下载
+                            <span class="layui-badge layui-bg-cyan layuiadmin-badge">月</span></div>
+                        <div class="layui-card-body  ">
+                            <p class="layuiadmin-big-font">33,555</p>
+                            <p>新下载
+                                <span class="layuiadmin-span-color">10%
+                                    <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md3">
+                    <div class="layui-card">
+                        <div class="layui-card-header">下载
+                            <span class="layui-badge layui-bg-cyan layuiadmin-badge">月</span></div>
+                        <div class="layui-card-body ">
+                            <p class="layuiadmin-big-font">33,555</p>
+                            <p>新下载
+                                <span class="layuiadmin-span-color">10%
+                                    <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md3">
+                    <div class="layui-card">
+                        <div class="layui-card-header">下载
+                            <span class="layui-badge layui-bg-cyan layuiadmin-badge">月</span></div>
+                        <div class="layui-card-body ">
+                            <p class="layuiadmin-big-font">33,555</p>
+                            <p>新下载
+                                <span class="layuiadmin-span-color">10%
+                                    <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md3">
+                    <div class="layui-card">
+                        <div class="layui-card-header">下载
+                            <span class="layui-badge layui-bg-cyan layuiadmin-badge">月</span></div>
+                        <div class="layui-card-body ">
+                            <p class="layuiadmin-big-font">33,555</p>
+                            <p>新下载
+                                <span class="layuiadmin-span-color">10%
+                                    <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                </div-->
+                
+ 
+                <style id="welcome_style"></style>
+            </div>
+        </div>
+        </div>
+    </body>
+</block>

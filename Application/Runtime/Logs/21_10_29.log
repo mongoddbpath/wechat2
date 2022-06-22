@@ -1,0 +1,624 @@
+[ 2021-10-29T09:02:39+08:00 ] 127.0.0.1 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined offset: 1 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = null ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.002000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+NOTIC: [2] array_diff(): Expected parameter 2 to be an array, null given D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 30 行.
+NOTIC: [2] array_diff(): Expected parameter 1 to be an array, null given D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 31 行.
+NOTIC: [2] array_merge(): Expected parameter 1 to be an array, null given D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = null )  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 51 行.
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.004001s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'Index' ) AND ( `action` = 'index' ) LIMIT 1   [ RunTime:0.002000s ]
+
+[ 2021-10-29T09:02:39+08:00 ] 127.0.0.1 /index.php/Admin/Login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2021-10-29T09:02:41+08:00 ] 127.0.0.1 /index.php/Admin/Login/doLogin.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `al_user` WHERE ( `username` = 'admin' ) AND ( `is_delete` = 0 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: HTTP_CLIENT_IP D:\phpstudy_pro\WWW\tryit.net\ThinkPHP\Common\functions.php 第 1314 行.
+NOTIC: [8] Undefined index: HTTP_X_FORWARDED_FOR D:\phpstudy_pro\WWW\tryit.net\ThinkPHP\Common\functions.php 第 1317 行.
+SQL: UPDATE `al_user` SET `last_login_time`=1635469361,`login_ip`='127.0.0.1' WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `al_user_role` [ RunTime:0.002000s ]
+SQL: SELECT role.auth_id FROM `al_user_role` INNER JOIN al_role as role ON role.role_id = al_user_role.role_id  WHERE ( al_user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: authStr D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\LoginController.class.php 第 98 行.
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( (`auth_id` = '1') OR (`auth_id` = '2') OR (`auth_id` = '101') OR (`auth_id` = '102') OR (`auth_id` = '103') OR (`auth_id` = '104') OR (`auth_id` = '201') OR (`auth_id` = '202') OR (`auth_id` = '1011') OR (`auth_id` = '1012') OR (`auth_id` = '1021') OR (`auth_id` = '1022') OR (`auth_id` = '1031') OR (`auth_id` = '1032') OR (`auth_id` = '1041') OR (`auth_id` = '1042') OR (`auth_id` = '1043') OR (`auth_id` = '1044') OR (`auth_id` = '2011') OR (`auth_id` = '2021') OR (`auth_id` = '10111') OR (`auth_id` = '10113') OR (`auth_id` = '10114') OR (`auth_id` = '10211') OR (`auth_id` = '10213') OR (`auth_id` = '10214') OR (`auth_id` = '10311') OR (`auth_id` = '10313') OR (`auth_id` = '10314') OR (`auth_id` = '10315') OR (`auth_id` = '10411') OR (`auth_id` = '10412') OR (`auth_id` = '10413') OR (`auth_id` = '10431') OR (`auth_id` = '10432') OR (`auth_id` = '10433') OR (`auth_id` = '103151') ) ORDER BY sort desc  [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.000000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = '040df5a87a323df1fdc1558fdae8524b' ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\LoginController.class.php 第 48 行.
+NOTIC: [8] Undefined index: nickname D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\LoginController.class.php 第 61 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2021-10-29T09:02:41+08:00 ] 127.0.0.1 /index.php/Admin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'Index' ) AND ( `action` = 'index' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `al_user_role` [ RunTime:0.001000s ]
+SQL: SELECT role.auth_id FROM `al_user_role` INNER JOIN al_role as role ON role.role_id = al_user_role.role_id  WHERE ( al_user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.002001s ]
+NOTIC: [8] Undefined variable: authStr D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 234 行.
+SQL: SELECT * FROM `al_role_auth` WHERE ( (`auth_id` = '1') OR (`auth_id` = '2') OR (`auth_id` = '101') OR (`auth_id` = '102') OR (`auth_id` = '103') OR (`auth_id` = '104') OR (`auth_id` = '201') OR (`auth_id` = '202') OR (`auth_id` = '1011') OR (`auth_id` = '1012') OR (`auth_id` = '1021') OR (`auth_id` = '1022') OR (`auth_id` = '1031') OR (`auth_id` = '1032') OR (`auth_id` = '1041') OR (`auth_id` = '1042') OR (`auth_id` = '1043') OR (`auth_id` = '1044') OR (`auth_id` = '2011') OR (`auth_id` = '2021') OR (`auth_id` = '10111') OR (`auth_id` = '10113') OR (`auth_id` = '10114') OR (`auth_id` = '10211') OR (`auth_id` = '10213') OR (`auth_id` = '10214') OR (`auth_id` = '10311') OR (`auth_id` = '10313') OR (`auth_id` = '10314') OR (`auth_id` = '10315') OR (`auth_id` = '10411') OR (`auth_id` = '10412') OR (`auth_id` = '10413') OR (`auth_id` = '10431') OR (`auth_id` = '10432') OR (`auth_id` = '10433') OR (`auth_id` = '103151') ) AND ( `state` = 1 ) ORDER BY sort asc  [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2021-10-29T09:02:41+08:00 ] 127.0.0.1 /index.php/Admin/Index/welcome.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'Index' ) AND ( `action` = 'welcome' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM al_user_position a  LEFT JOIN al_position b  ON  a.position_id = b.position_id where user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.006001s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] :  SELECT * FROM al_user_position a  LEFT JOIN al_position b  ON  a.position_id = b.position_id where user_id = '040df5a87a323df1fdc1558fdae8524b' 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\IndexController.class.php 第 19 行.
+SQL:  SELECT * FROM al_user_dept a  LEFT JOIN al_dept b  ON  a.dept_id = b.dept_id where user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_user_dept' doesn't exist
+ [ SQL语句 ] :  SELECT * FROM al_user_dept a  LEFT JOIN al_dept b  ON  a.dept_id = b.dept_id where user_id = '040df5a87a323df1fdc1558fdae8524b' 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\IndexController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `al_order` [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_order' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `al_order`
+SQL: SELECT COUNT(*) AS tp_count FROM `al_order` WHERE ( `distribution_status` = 0 ) LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_order' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `al_order` WHERE ( `distribution_status` = 0 ) LIMIT 1  
+SQL: SHOW COLUMNS FROM `al_project_task` [ RunTime:0.000000s ]
+ERR: 1146:Table 'dianbai.al_project_task' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `al_project_task`
+SQL: SELECT * FROM `al_project_task` WHERE ( `task_status` = 0 )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_project_task' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `al_project_task` WHERE ( `task_status` = 0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\IndexController.class.php 第 36 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2021-10-29T09:02:41+08:00 ] 127.0.0.1 /index.php/Admin/Knowledge/knowledge_list?
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Knowledge
+
+[ 2021-10-29T09:02:41+08:00 ] 127.0.0.1 /index.php/Admin/Mod/mod_attr_list?
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'Mod' ) AND ( `action` = 'mod_attr_list' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `al_mod` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `al_mod` WHERE ( `is_delete` = 0 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2021-10-29T09:02:41+08:00 ] 127.0.0.1 /index.php/Admin/Mod/mod_list?
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'Mod' ) AND ( `action` = 'mod_list' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2021-10-29T09:02:41+08:00 ] 127.0.0.1 /index.php/Admin/Item/item_list?
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'Item' ) AND ( `action` = 'item_list' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.002001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2021-10-29T09:02:41+08:00 ] 127.0.0.1 /index.php/Admin/User/user_list?
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.002000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'User' ) AND ( `action` = 'user_list' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `al_position` [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `al_position`
+SQL: SELECT * FROM `al_position` WHERE ( `is_delete` = 0 )  [ RunTime:0.002000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `al_position` WHERE ( `is_delete` = 0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 369 行.
+SQL: SHOW COLUMNS FROM `al_item` [ RunTime:0.001001s ]
+NOTIC: [8] Undefined variable: dept_where D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 99 行.
+SQL: SELECT * FROM `al_item`  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `al_role` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_role` WHERE ( `is_delete` = 0 )  [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2021-10-29T09:02:42+08:00 ] 127.0.0.1 /index.php/Admin/Mod/mod_list.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.003000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'Mod' ) AND ( `action` = 'mod_list' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.001000s ]
+NOTIC: [2] Illegal string offset 'mod_name' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\ModController.class.php 第 13 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\ModController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `al_mod` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `al_mod` WHERE ( `is_delete` = 0 ) LIMIT 0,20   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `al_mod` WHERE ( `is_delete` = 0 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2021-10-29T09:02:42+08:00 ] 127.0.0.1 /index.php/Admin/Mod/mod_attr_list.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.000000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'Mod' ) AND ( `action` = 'mod_attr_list' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.002000s ]
+NOTIC: [2] Illegal string offset 'mod' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\ModController.class.php 第 107 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\ModController.class.php 第 107 行.
+SQL: SHOW COLUMNS FROM `al_mod_attr` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_mod_attr` WHERE ( `is_delete` = 0 ) LIMIT 0,20   [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `al_mod_attr` WHERE ( `is_delete` = 0 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2021-10-29T09:02:42+08:00 ] 127.0.0.1 /index.php/Admin/Item/item_list.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'Item' ) AND ( `action` = 'item_list' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.001000s ]
+NOTIC: [2] Illegal string offset 'item_name' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\ItemController.class.php 第 13 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\ItemController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM al_item as item [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as item' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_item as item
+SQL: SELECT * FROM al_item as item WHERE ( `is_delete` = 0 ) ORDER BY  update_time asc  LIMIT 0,20   [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM al_item as item WHERE ( `is_delete` = 0 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: isParams D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\ItemController.class.php 第 29 行.
+
+[ 2021-10-29T09:02:42+08:00 ] 127.0.0.1 /index.php/Admin/User/user_list.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'User' ) AND ( `action` = 'user_list' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.002000s ]
+NOTIC: [2] Illegal string offset 'username' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 18 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 18 行.
+NOTIC: [2] Illegal string offset 'real_name' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 21 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 21 行.
+NOTIC: [2] Illegal string offset 'status' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 24 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 24 行.
+NOTIC: [2] Illegal string offset 'mobile' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 27 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 27 行.
+NOTIC: [2] Illegal string offset 'role' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 38 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 38 行.
+SQL: SHOW COLUMNS FROM al_user as user [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user as user
+NOTIC: [8] Undefined variable: add_join D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 44 行.
+SQL: SELECT * FROM al_user as user WHERE ( user.is_delete = 0 ) LIMIT 0,20   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: add_join D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\UserController.class.php 第 51 行.
+SQL: SELECT COUNT(*) AS tp_count FROM al_user as user WHERE ( user.is_delete = 0 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM al_user_item as user_item [ RunTime:0.001001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_item' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_item as user_item
+SQL: SELECT * FROM al_user_item as user_item INNER JOIN al_item ON al_item.item_id = user_item.item_id  WHERE ( user_item.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.001000s ]
+SQL: SELECT * FROM al_user_role as user_role INNER JOIN al_role ON al_role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.002000s ]
+
+[ 2021-10-29T09:02:45+08:00 ] 127.0.0.1 /index.php/Admin/First/user_list?
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.002000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'First' ) AND ( `action` = 'user_list' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.002000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2021-10-29T09:02:45+08:00 ] 127.0.0.1 /index.php/Admin/First/user_list.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.002000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'First' ) AND ( `action` = 'user_list' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001001s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.003000s ]
+NOTIC: [2] Illegal string offset 'item_no' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 36 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 36 行.
+NOTIC: [2] Illegal string offset 'job_no' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 39 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 39 行.
+NOTIC: [2] Illegal string offset 'username' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 42 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 42 行.
+NOTIC: [2] Illegal string offset 'idstype' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 45 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 45 行.
+NOTIC: [2] Illegal string offset 'idsnum' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 48 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 48 行.
+NOTIC: [2] Illegal string offset 'item_name' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 51 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 51 行.
+NOTIC: [2] Illegal string offset 'phone' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 54 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 54 行.
+NOTIC: [2] Illegal string offset 'sex' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 57 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 57 行.
+NOTIC: [2] Illegal string offset 'status' D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 60 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\FirstController.class.php 第 60 行.
+SQL: SHOW COLUMNS FROM `al_userinfo` [ RunTime:0.004000s ]
+SQL: SELECT P.* FROM al_userinfo P Left JOIN al_bankcard U ON P.id=U.id Left JOIN al_otherinfo U_M ON P.id=U_M.id Left JOIN al_salary U_MY ON P.id=U_MY.id  WHERE ( P.item_no IN ('2021-005','2021-004','2021-003','2021-001','2021-006','2021-008','2021-007','2021-000','2021-002') ) ORDER BY P.update_time desc LIMIT 0,20   [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `al_userinfo` [ RunTime:0.007001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `al_userinfo` LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2021-10-29T09:02:47+08:00 ] 127.0.0.1 /index.php/Admin/First/getimg.html?id=2021-0042907057147f9f4b0093665d5220ce07e
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'First' ) AND ( `action` = 'getimg' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `al_userinfo` [ RunTime:0.002000s ]
+SQL: SELECT P.* FROM al_userinfo P LEFT JOIN al_bankcard U ON P.id=U.id  WHERE ( P.id = '2021-0042907057147f9f4b0093665d5220ce07e' )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2021-10-29T09:02:47+08:00 ] 127.0.0.1 /index.php/Admin/First/getimg2.html?id=2021-0042907057147f9f4b0093665d5220ce07e
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.001001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.000000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'First' ) AND ( `action` = 'getimg2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `al_bankcard` [ RunTime:0.002000s ]
+SQL: SELECT `imgsurl` FROM `al_bankcard` WHERE ( `id` = '2021-0042907057147f9f4b0093665d5220ce07e' )  [ RunTime:0.000000s ]
+
+[ 2021-10-29T09:02:47+08:00 ] 127.0.0.1 /index.php/Admin/First/getimg1.html?id=2021-0042907057147f9f4b0093665d5220ce07e
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `al_user` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `al_user` WHERE ( `user_id` = '040df5a87a323df1fdc1558fdae8524b' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM al_user_position as user_position [ RunTime:0.002001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_position' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_position as user_position
+NOTIC: [8] Undefined variable: result D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 24 行.
+SQL: SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'dianbai.al_position' doesn't exist
+ [ SQL语句 ] : SELECT position.* FROM al_user_position as user_position INNER JOIN al_position as position ON position.position_id = user_position.position_id  WHERE ( user_position.user_id = null ) 
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpstudy_pro\WWW\tryit.net\Application\Admin\Controller\AdminBaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM al_user_role as user_role [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as user_role' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM al_user_role as user_role
+SQL: SELECT role.update_time FROM al_user_role as user_role INNER JOIN al_role as role ON role.role_id = user_role.role_id  WHERE ( user_role.user_id = '040df5a87a323df1fdc1558fdae8524b' )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `al_role_auth` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `al_role_auth` WHERE ( `controller` = 'First' ) AND ( `action` = 'getimg1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL:  SELECT * from al_user_item WHERE user_id = '040df5a87a323df1fdc1558fdae8524b'  [ RunTime:0.001000s ]
+SQL:  SELECT * FROM `al_item` WHERE   path like '%/dfd5ab2311c681104a134e791f3ed341/%' or item_id='dfd5ab2311c681104a134e791f3ed341'  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `al_userinfo` [ RunTime:0.001000s ]
+SQL: SELECT `imgsurl`,`zjimgsurl` FROM `al_userinfo` WHERE ( `id` = '2021-0042907057147f9f4b0093665d5220ce07e' )  [ RunTime:0.001000s ]
+

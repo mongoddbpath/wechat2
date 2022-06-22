@@ -1,0 +1,71 @@
+<extend name="Base:base" />
+<block name="body">
+    <body>
+        <div class="layui-fluid">
+            <div class="layui-row">
+                <form class="layui-form">  
+                 
+
+                  <div class="layui-form-item">
+                      <input type="hidden" value="{$row.mod_id}" name="mod_id"/>
+                      <label for="role_name" class="layui-form-label">
+                          <span class="x-red">*</span>基础模块名称
+                      </label>
+                      <div class="layui-input-inline">
+                          <input type="text" id="mod_name" name="mod_name"  lay-verify="mod_name"
+                          autocomplete="off" class="layui-input" value="{$row.mod_name}">
+                      </div>
+                  </div>
+
+                  <input type="hidden" value="save" name="action"/>
+                  <div class="layui-form-item">
+                      <label for="L_repass" class="layui-form-label">
+                      </label>
+                      <button  class="layui-btn" lay-filter="add" lay-submit="">
+                          提交
+                      </button>
+                  </div>
+              </form>
+            </div>
+        </div>
+        <script>
+        layui.use(['form', 'layer'],
+            function() {
+                $ = layui.jquery;
+                var form = layui.form,
+                layer = layui.layer;
+                //自定义验证规则
+                form.verify({
+                    mod_name:function(value){
+                      if(value.length < 1){
+                        return '工程项目名称不能为空';
+                      }
+                    }
+                });
+                //监听提交
+                form.on('submit(add)',
+                function(data) {
+                    // debugger;
+                    var url = "{:U('Mod/edit')}";
+                    $.post(url,data.field,function(rs){
+                      if(rs.status==1){
+                          //发异步，把数据提交给php
+                          layer.alert(rs.msg, {
+                              icon: 6
+                          },
+                          function() {
+                              //关闭当前frame
+                              xadmin.close();
+                              // 可以对父窗口进行刷新 
+                              xadmin.father_reload(); 
+                          });
+                      }else{
+                        layer.msg(rs.msg); 
+                      }
+                    },"json");
+                    return false;
+                });
+            });
+      </script>
+    </body>
+</block>

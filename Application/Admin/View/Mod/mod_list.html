@@ -1,0 +1,158 @@
+<extend name="Base:base" />
+<block name="body">
+    <body>
+        <div class="layui-fluid">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                      
+                        <div class="layui-card-body layui-table-body layui-table-main">
+
+                          <fieldset class="layui-elem-field">
+                            <legend>搜索</legend>
+                            <form class="layui-form layui-col-space5">
+                              <div class="layui-form-item">
+                                <div class="layui-inline">
+                                  <label class="layui-form-label">名称</label>
+                                  <div class="layui-input-inline">
+                                    <input type="text" name="mod_name" autocomplete="off" class="layui-input">
+                                  </div>
+                                </div>
+                                <div class="layui-inline"  style="width: 120px;text-align: center;">
+                                  <div class="layui-inline layui-show-xs-block">
+                                    <button class="layui-btn"  lay-submit="" lay-filter="data-search-btn"><i class="layui-icon">&#xe615;</i>搜索</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                          </fieldset>
+
+                          <script type="text/html" id="toolbarHead">
+                            <div class="layui-btn-container">
+                              <?php if($user_auth['Item']['delete']){ ?> 
+                                <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+                              <?php } ?>
+                            </div>
+                          </script>
+
+                          <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
+
+                          <script type="text/html" id="currentTableBar">
+                            <?php if($user_auth['Item']['edit']){ ?>
+                              <a class="layui-btn layui-btn-xs data-count-edit" onclick="xadmin.open('编辑工程项目','{:U('Mod/edit')}?mod_id={{d.mod_id}}',800,600)" href="javascript:;">编辑</a>
+                            <?php } ?>
+                            <?php if($user_auth['Item']['delete']){ ?> 
+                              <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" onclick="item_del(this,'{{d.mod_id}}')" lay-event="delete">删除</a>
+                            <?php } ?>
+                          </script>
+
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </body>
+    <script>
+      layui.use(['laydate','form','table'], function(){
+        var laydate = layui.laydate,
+            table = layui.table,
+            form = layui.form;
+
+        //数据表格
+        table.render({
+            elem: '#currentTableId',
+            url: '{:U("Mod/mod_list")}',
+            toolbar: '#toolbarHead',
+            method: 'post',
+            cols: [[
+                {type: "checkbox", fixed: "left" , title: '全选'},
+                {field: 'mod_id', title: '基础模块ID'},
+                {field: 'mod_name', title: '基础模块名称'},
+                {title: '操作', toolbar: '#currentTableBar', fixed: "right", align: "center"}
+            ]],
+            limits: [10, 15, 20, 25, 50, 100],
+            limit: 20,
+            page: true,
+            done: function(res, curr, count){
+                //如果是异步请求数据方式，res即为你接口返回的信息。curr 当前页码 count数据总量
+                //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+                console.log(res);
+            }
+        });
+        
+        // 监听搜索操作
+        form.on('submit(data-search-btn)', function (data) {
+          //执行搜索重载
+          table.reload('currentTableId', {
+              page: {
+                  curr: 1
+              }
+              , where: {
+                  searchParams: data.field
+              }
+          }, 'data');
+
+          return false;
+        });
+
+        // 监听全选
+        form.on('checkbox(checkall)', function(data){
+          if(data.elem.checked){
+            $('tbody input').prop('checked',true);
+          }else{
+            $('tbody input').prop('checked',false);
+          }
+          form.render('checkbox');
+        }); 
+
+        //全选删除
+        window.delAll = function(argument) {
+          var url = '{:U("Mod/delete")}';
+          var checkStatus = table.checkStatus('currentTableId'), 
+              data = checkStatus.data;
+          if(data.length < 1){
+            layer.msg('请至少选择一条数据',{icon:3,time:1000});
+            return;
+          }
+          //禁用集合
+          var ids = new Array();
+          $.each(data, function(index,val) {
+            ids.push(val.mod_id);
+          });
+    
+          layer.confirm('确认要删除吗？',function(index){
+              var id = ids.toString();
+              $.post(url,{'mod_id':id},function(rs){
+                if(rs.status == 1){
+                  layer.msg(rs.msg,{icon:1,time:1000});
+                }else{
+                  layer.msg(rs.msg,{icon:2,time:1000});
+                }
+                table.reload("currentTableId",{});
+              },'json');
+          });
+        }
+
+      });
+
+      /*部门-删除*/
+      function item_del(obj,id){
+          var url = '{:U("Mod/delete")}';
+          layer.confirm('确认要删除吗？',function(index){
+            $.post(url,{'mod_id':id},function(rs){
+                if(rs.status == 1){
+                  $(obj).parents("tr").remove();
+                  layer.msg(rs.msg,{icon:1,time:1000});
+                }else{
+                  layer.msg(rs.msg,{icon:1,time:1000});
+                }
+            },'json');
+              //发异步删除数据
+              //$(obj).parents("tr").remove();
+              //layer.msg('已删除!',{icon:1,time:1000});
+          });
+      }
+
+    </script>
+</block>
